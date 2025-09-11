@@ -1,0 +1,35 @@
+<div class="login-container">
+    <div class="login-image"></div>
+    <div class="login-form">
+        <h1>Welcome Back</h1>
+        <p>Please login to continue</p>
+
+        <form [formGroup]="loginForm">
+            <input type="text" placeholder="UserName" formControlName="UserName" />
+            @if (f['UserName'].touched && f['UserName'].invalid) {
+            <div class="error">
+                @if (f['UserName'].errors?.['required']) {
+                <small>Username is required!</small>
+                }
+                @if (f['UserName'].errors?.['minlength']) {
+                <small>Minimum 3 characters required!</small>
+                }
+            </div>
+            }
+            <input type="password" placeholder="Password" formControlName="Password" />
+            @if (f['Password'].touched && f['Password'].invalid) {
+            <div class="error">
+                @if (f['Password'].errors?.['required']) {
+                <small>Password is required!</small>
+                }
+                @if (f['Password'].errors?.['minlength']) {
+                <small>Minimum 6 characters required!</small>
+                }
+            </div>
+            }
+            <button type="submit" (click)="authorizedUser()" [disabled]="loginForm.invalid">Login</button>
+        </form>
+
+        <p class="register-link">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+</div>

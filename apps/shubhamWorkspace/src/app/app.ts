@@ -6,7 +6,7 @@ import { MainNavComponent } from "./main-nav/main-nav.component";
 
 
 @Component({
-  imports: [RouterModule, MainNavComponent],
+  imports: [RouterModule],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',

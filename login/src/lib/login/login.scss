@@ -1,0 +1,94 @@
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.login-image {
+    flex-basis: 50%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1559056961-1f4dbbf9d36a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGxvZ2lufGVufDB8fDB8fHww');
+}
+
+.login-form {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    padding: 12px;
+    background: #6a4c3c;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #55392d;
+}
+
+.register-link {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.error {
+    margin: 0;
+}
+
+.error small {
+    color: red;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 4px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column-reverse;
+    }
+
+    .login-image {
+        flex-basis: auto;
+        height: 40vh;
+        min-height: 200px;
+    }
+
+    .login-form {
+        flex-basis: auto;
+        box-shadow: none;
+        border-radius: 20px 20px 0 0;
+    }
+}

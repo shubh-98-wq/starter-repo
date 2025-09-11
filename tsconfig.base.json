@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@org/cart": ["cart/src/index.ts"],
       "@org/category": ["category/src/index.ts"],
       "@org/home": ["home/src/index.ts"],
+      "@org/login": ["login/src/index.ts"],
       "@org/product": ["product/src/index.ts"]
     }
   },
