@@ -21,7 +21,10 @@
             "input": "apps/shubhamWorkspace/public"
           }
         ],
-        "styles": ["apps/shubhamWorkspace/src/styles.scss"]
+        "styles": [
+          "apps/shubhamWorkspace/src/styles.scss",
+          "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+        ]
       },
       "configurations": {
         "production": {

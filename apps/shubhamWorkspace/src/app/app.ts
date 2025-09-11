@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { MainNavComponent } from "./main-nav/main-nav.component";
+
+
+
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule, MainNavComponent],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
   protected title = 'shubhamWorkspace';
+
+
 }

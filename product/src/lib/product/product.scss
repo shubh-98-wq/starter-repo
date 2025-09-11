@@ -1,0 +1,120 @@
+.container {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f7f7f7;
+    display: flex;
+    // min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px 10px;
+    margin: 10px 5px;
+
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.favorite {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    background: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    color: #d0d0d0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card-img {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #6a4c3c;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.price {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.new-price {
+    color: #6a4c3c;
+    font-weight: 600;
+}
+
+.old-price {
+    color: #ccc;
+    text-decoration: line-through;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.desc {
+    color: #777;
+    font-size: 0.9rem;
+    margin: 15px 0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 30px;
+    border: 1px solid #6a4c3c;
+    background: transparent;
+    color: #6a4c3c;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-btn:nth-child(2) {
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 30px;
+    border: 1px solid rgb(85, 30, 181);
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgb(85, 30, 181);
+}
+
+.buy-btn:hover {
+    background: #6a4c3c;
+    color: white;
+}
