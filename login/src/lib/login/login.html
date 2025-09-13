@@ -5,24 +5,24 @@
         <p>Please login to continue</p>
 
         <form [formGroup]="loginForm">
-            <input type="text" placeholder="UserName" formControlName="UserName" />
-            @if (f['UserName'].touched && f['UserName'].invalid) {
+            <input type="text" placeholder="username" formControlName="username" />
+            @if (f['username'].touched && f['username'].invalid) {
             <div class="error">
-                @if (f['UserName'].errors?.['required']) {
+                @if (f['username'].errors?.['required']) {
                 <small>Username is required!</small>
                 }
-                @if (f['UserName'].errors?.['minlength']) {
+                @if (f['username'].errors?.['minlength']) {
                 <small>Minimum 3 characters required!</small>
                 }
             </div>
             }
-            <input type="password" placeholder="Password" formControlName="Password" />
-            @if (f['Password'].touched && f['Password'].invalid) {
+            <input type="password" placeholder="password" formControlName="password" />
+            @if (f['password'].touched && f['password'].invalid) {
             <div class="error">
-                @if (f['Password'].errors?.['required']) {
+                @if (f['password'].errors?.['required']) {
                 <small>Password is required!</small>
                 }
-                @if (f['Password'].errors?.['minlength']) {
+                @if (f['password'].errors?.['minlength']) {
                 <small>Minimum 6 characters required!</small>
                 }
             </div>

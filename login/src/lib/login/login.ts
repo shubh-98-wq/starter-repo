@@ -1,7 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { CommonModule, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
+import { Auth } from './auth';
 
+
+interface loginInfo {
+  username: string;
+  Password: string;
+}
 @Component({
   selector: 'lib-login',
   imports: [ReactiveFormsModule, CommonModule],
@@ -10,6 +17,9 @@ import { CommonModule, NgIf } from '@angular/common';
 })
 export class Login {
   loginForm!: FormGroup;
+
+  private readonly loginService = inject(Auth);
+  private route = inject(Router);
 
   constructor() {
     this.initForm();
@@ -22,8 +32,8 @@ export class Login {
 
   initForm() {
     this.loginForm = new FormGroup({
-      UserName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      Password: new FormControl('', [Validators.required, Validators.minLength(9)]),
+      username: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(4)]),
     });
   }
 
@@ -31,6 +41,12 @@ export class Login {
   authorizedUser() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
+      this.loginService.login(this.loginForm.value).subscribe((res) => {
+        if (res) {
+          this.loginService.isloggedIn = true;
+          this.route.navigate(['/dashboard/product']);//navigating to dashboard after login
+        }
+      });
     } else {
       this.loginForm.markAllAsTouched();
     }

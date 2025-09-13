@@ -7,6 +7,8 @@ import { productFeature, loadProducts, loadProductsByCatgory } from '@org/produc
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import { cartFeature, loadCarts } from '@org/cart';
 import { MainNavComponent } from './main-nav/main-nav.component';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { loginGuard } from '@org/login';
 
 
 
@@ -21,6 +23,7 @@ export const appRoutes: Route[] = [
     {
         path: 'dashboard',
         component: MainNavComponent,
+        canMatch: [loginGuard],
         children: [
             {
                 path: 'product', loadComponent: () => import('@org/product').then(m => m.Product),
